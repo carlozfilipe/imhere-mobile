@@ -7,6 +7,10 @@ export function Home() {
   function handleParticipantAdd() {
     console.log('Você clicou em adicionar participante!');
   }
+  
+  function handleParticipantRemove(name: string) {
+    alert(`Você clicou em remover o participante ${name}!`);
+  }
 
   return (
     <View style={styles.container}>
@@ -30,10 +34,8 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant fullName="Ada Lovelace" />
-      <Participant fullName="Carl Sagan" />
-      <Participant fullName="Carlos Filipe" />
-      <Participant fullName="Rick Sanchez" />
+      <Participant name="Ada Lovelace" onRemove={() => handleParticipantRemove('Ada')} />
+      <Participant name="Carl Sagan" onRemove={() => handleParticipantRemove('Sagan')} />
 
     </View>
   )
